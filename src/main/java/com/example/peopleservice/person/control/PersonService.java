@@ -38,4 +38,10 @@ public class PersonService {
 
         return null;
     }
+
+    public Person newPerson(Person person) {
+
+        return personRepository.save(person);
+        
+    }
 }

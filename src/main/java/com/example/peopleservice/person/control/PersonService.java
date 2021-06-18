@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 import com.example.peopleservice.person.boundary.PersonRepository;
+import com.example.peopleservice.person.boundary.exceptions.ObjectNotFoundException;
 import com.example.peopleservice.person.entity.Person;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +37,7 @@ public class PersonService {
             return person.get();
         }
 
-        return null;
+        throw new ObjectNotFoundException(Person.class, id);
     }
 
     public Person newPerson(Person person) {
@@ -55,6 +56,6 @@ public class PersonService {
     public void deletePerson(Long id) {
 
         personRepository.delete(getPerson(id));
-        
+
     }
 }

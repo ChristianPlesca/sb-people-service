@@ -2,6 +2,8 @@ package com.example.peopleservice.person.boundary;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import com.example.peopleservice.person.control.PersonService;
 import com.example.peopleservice.person.entity.Person;
 
@@ -38,20 +40,20 @@ public class PersonController {
     }
 
     @PostMapping
-    public Person newPerson (@RequestBody Person person) {
+    public Person newPerson (@RequestBody @Valid Person person) {
 
         return personService.newPerson(person);
     }
 
     @PutMapping("{id}")
-    public Person updatePerson(@PathVariable("id")Long id, @RequestBody Person person) {
+    public Person updatePerson(@PathVariable("id")Long id, @RequestBody @Valid Person person) {
 
         return personService.updatePerson(id, person);
     }
 
     @DeleteMapping("{id}")
     public void deletePerson(@PathVariable("id")Long id) {
-        
+
         personService.deletePerson(id);
     }
 }

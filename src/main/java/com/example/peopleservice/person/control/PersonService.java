@@ -51,4 +51,10 @@ public class PersonService {
 
         return personRepository.save(person);
     }
+
+    public void deletePerson(Long id) {
+
+        personRepository.delete(getPerson(id));
+        
+    }
 }

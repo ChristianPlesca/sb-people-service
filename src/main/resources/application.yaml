@@ -17,5 +17,5 @@ spring:
       enabled: true
       continue-on-error: true
       platform: postgresql
-  server:
-    port: 40000
+server:
+  port: 40000

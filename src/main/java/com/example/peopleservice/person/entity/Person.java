@@ -5,10 +5,15 @@ import lombok.Data;
 
 import java.time.LocalDate;
 
+import org.springframework.data.annotation.Id;
+
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Builder
 public class Person {
 
+    @Id
     private Long id;
     private String firstName;
     private String lastName;

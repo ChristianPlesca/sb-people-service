@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -39,5 +40,11 @@ public class PersonController {
     public Person newPerson (@RequestBody Person person) {
 
         return personService.newPerson(person);
+    }
+
+    @PutMapping("{id}")
+    public Person updatePerson(@PathVariable("id")Long id, @RequestBody Person person) {
+
+        return personService.updatePerson(id, person);
     }
 }

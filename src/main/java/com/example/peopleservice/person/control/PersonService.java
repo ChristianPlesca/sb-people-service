@@ -42,6 +42,13 @@ public class PersonService {
     public Person newPerson(Person person) {
 
         return personRepository.save(person);
-        
+
+    }
+
+    public Person updatePerson(Long id, Person person) {
+
+        getPerson(id);
+
+        return personRepository.save(person);
     }
 }

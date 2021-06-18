@@ -2,6 +2,7 @@ package com.example.peopleservice.person.control;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import com.example.peopleservice.person.boundary.PersonRepository;
 import com.example.peopleservice.person.entity.Person;
@@ -26,5 +27,15 @@ public class PersonService {
         people.forEach(peopleList::add);
 
         return peopleList;
+    }
+
+    public Person getPerson(Long id) {
+
+        Optional<Person> person = personRepository.findById(id);
+        if (person.isPresent()) {
+            return person.get();
+        }
+
+        return null;
     }
 }

@@ -10,8 +10,8 @@ spring:
         show-sql: true
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/demo_app?currentSchema=app
-    username: admin
+    url: jdbc:postgresql://localhost:5432/demo_app
+    username: postgres
     password: password
   sql:
     init:
